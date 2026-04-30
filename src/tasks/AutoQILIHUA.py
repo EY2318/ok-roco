@@ -9,16 +9,15 @@ class AutoQILIHUA(MyBaseTask):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.name = "自动刷奇丽花2"
-        self.description = "需要至少5只奇丽花"
+        self.name = "自动刷奇丽花"
         # self.group_name = "任务列表"
         self.group_icon = FluentIcon.SYNC
         self.icon = FluentIcon.SYNC
         self.default_config.update({
             # '是否选项默认支持': False,
             '运行轮数': 999,
-            '是否六只奇丽花': False,
-            '使用须知': "需要预先切换到奇丽花配队,配队中2号位带坐骑用于采花,组队的话可以带同乘坐骑。去艾普鲁庄园的大型眼枭庇护所,传送过去后开启脚本即可,传送过去什么都不要做",
+            '是否使用收割队伍': False,
+            '使用须知': "需要预先切换到奇丽花配队,收割队伍放在奇丽花队的上一队,去月兔暗港的魔力之源传送点,传送过去后开启脚本即",
         })
 
     def pressEmotion(self):
@@ -40,21 +39,46 @@ class AutoQILIHUA(MyBaseTask):
             times += 1
             self.log_info(f'第{times}次召唤奇丽花')
 
-            # self.move_relative(0, 0.5)
-            # self.move_relative(0, 0.5)
-            # self.move_relative(0, 0.5)
-            # self.move_relative(0, 0.5)
-            # self.move_relative(0, 0.5)
-            # self.move_relative(0, 0.5)
-
-            self.send_key('1')
+            # 传送后修正位置
+            self.send_key_down('a')
+            self.sleep(0.6)
+            self.send_key_up('a')
+            # 切换白天
+            self.send_key_down('f')
             self.sleep(0.3)
-            self.mouse_down()
-            self.sleep(0.1)
-            self.mouse_up()
-            self.sleep(1)
+            self.send_key_up('f')
+            self.sleep(7)
+            self.send_key_down('1')
+            self.sleep(0.3)
+            self.send_key_up('1')
+            self.sleep(4)
+            self.send_key_down('1')
+            self.sleep(0.3)
+            self.send_key_up('1')
+            self.sleep(8)
+            self.send_key_down('2')
+            self.sleep(0.3)
+            self.send_key_up('2')
+            self.sleep(5)
+            self.send_key_down('a')
+            self.send_key_down('s')
+            self.sleep(0.5)
+            self.send_key_up('a')
+            self.send_key_up('s')
 
-            if use_six:
+            for i in range(6):
+                
+                self.mouse_down()
+                self.sleep(1.2)
+                if i > 0 or times > 1:
+                    self.scroll_relative(0.5, 0.5, -1)
+                    
+                self.sleep(0.8)
+                self.send_key('1')
+                self.sleep(0.6)
+                self.mouse_up()
+                self.sleep(2)
+
                 self.send_key('2')
                 self.sleep(0.3)
                 self.mouse_down()
@@ -62,47 +86,63 @@ class AutoQILIHUA(MyBaseTask):
                 self.mouse_up()
                 self.sleep(1)
 
-            self.send_key('3')
-            self.sleep(0.3)
-            self.mouse_down()
-            self.sleep(0.1)
-            self.mouse_up()
-            self.sleep(1)
-
-            self.send_key('4')
-            self.sleep(0.3)
-            self.mouse_down()
-            self.sleep(0.1)
-            self.mouse_up()
-            self.sleep(1)
-
-            self.send_key('5')
-            self.sleep(0.3)
-            self.mouse_down()
-            self.sleep(0.1)
-            self.mouse_up()
-            self.sleep(1)
-
-            self.send_key('6')
-            self.sleep(0.3)
-            self.mouse_down()
-            self.sleep(0.1)
-            self.mouse_up()
-            self.sleep(0.3)
-
-            for i in range(15):
-                self.pressEmotion()
-                self.sleep(15)
-                self.send_key('2')
-                self.sleep(1)
-                self.send_key('r')
-                self.sleep(1)
-                self.send_key('x')
-                self.sleep(0.5)
+                self.send_key('3')
+                self.sleep(0.3)
                 self.mouse_down()
                 self.sleep(0.1)
                 self.mouse_up()
                 self.sleep(1)
+
+                self.send_key('4')
+                self.sleep(0.3)
+                self.mouse_down()
+                self.sleep(0.1)
+                self.mouse_up()
+                self.sleep(1)
+
+                self.send_key('5')
+                self.sleep(0.3)
+                self.mouse_down()
+                self.sleep(0.1)
+                self.mouse_up()
+                self.sleep(1)
+
+                self.send_key('6')
+                self.sleep(0.3)
+                self.mouse_down()
+                self.sleep(0.1)
+                self.mouse_up()
+                self.sleep(0.3)
+
+            
+                # self.pressEmotion()
+                self.sleep(15)
+                # self.send_key('2')
+                # self.sleep(1)
+                # self.send_key('r')
+                # self.sleep(1)
+                # self.send_key('x')
+                # self.sleep(0.5)
+                # self.mouse_down()
+                # self.sleep(0.1)
+                # self.mouse_up()
+                # self.sleep(1)
+                self.mouse_down()
+                self.sleep(1.2)
+                self.scroll_relative(0.5, 0.5, 1)
+                self.sleep(0.8)
+                self.send_key('1')
+                self.sleep(0.6)
+                self.mouse_up()
+                self.sleep(0.3)
+                self.mouse_down()
+                self.sleep(0.3)
+                self.mouse_up()
+                self.sleep(1)
+                self.send_key('r')
+                self.sleep(1)
+                self.send_key('x')
+                self.sleep(2)
             
             self.sleep(0.3)
             self.send_key('m')

@@ -106,6 +106,9 @@ config = {
     'onetime_tasks': [  # 用户点击触发的任务
         # ["src.tasks.MyOneTimeTask", "MyOneTimeTask"],
         ["src.tasks.AutoQILIHUA", "AutoQILIHUA"],
+        ["src.tasks.AutoTab", "AutoTab"],
+        ["src.tasks.AutoDayAlter", "AutoDayAlter"],
+        ["src.tasks.AutoSpectate", "AutoSpectate"],
         ["ok", "DiagnosisTask"],
     ],
     'trigger_tasks':[ # 不断执行的触发式任务
