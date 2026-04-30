@@ -10,6 +10,24 @@ profiles:
     use_pythonw: true
     show_add_defender: true
 
+  - name: "gh-proxy"
+    git_url: "https://gh-proxy.org/https://github.com/EY2318/ok-roco.git"
+    admin: true
+    main_script: "main.py"
+    requires_python: "3.12"
+    requirements: "requirements.txt"
+    use_pythonw: true
+    show_add_defender: true
+
+  - name: "gitee"
+    git_url: "https://gitee.com/LynLuc/ok-roco.git"
+    admin: true
+    main_script: "main.py"
+    requires_python: "3.12"
+    requirements: "requirements.txt"
+    use_pythonw: true
+    show_add_defender: true
+
   - name: "Debug"
     main_script: "main_debug.py"
     requirements: "requirements.txt"

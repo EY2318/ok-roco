@@ -23,11 +23,14 @@ class AutoSpectate(MyBaseTask):
         while True:
             qiecuo = self.find_one('qiecuo')
             guanzhan = self.find_one('guanzhan')
+            guan = self.find_one('guan')
 
             if guanzhan is not None:
                 self.click_box_with_move(guanzhan)
             elif qiecuo is not None:
                 self.send_key('Esc')
+            elif guan is not None:
+                self.click_box_with_move(guan)
             else :
                 self.send_key('f')
 

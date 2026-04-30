@@ -35,6 +35,12 @@
             "height": 1080,
             "id": 5,
             "file_name": "upload/3.png" 
+        },
+        {
+            "width": 1920,
+            "height": 1080,
+            "id": 6,
+            "file_name": "upload/4.png" 
         }
     ],
     "categories": [
@@ -81,6 +87,10 @@
         {
             "id": 10,
             "name": "qiecuo"
+        },
+        {
+            "id": 11,
+            "name": "guan"
         }
     ],
     "annotations": [
@@ -248,6 +258,21 @@
             "ignore": 0,
             "iscrowd": 0,
             "area": 1692.0
+        },
+        {
+            "id": 11,
+            "image_id": 6,
+            "category_id": 11,
+            "segmentation": [],
+            "bbox": [
+                1393,
+                961,
+                60,
+                30
+            ],
+            "ignore": 0,
+            "iscrowd": 0,
+            "area": 1800.0
         }
     ],
     "info": {
