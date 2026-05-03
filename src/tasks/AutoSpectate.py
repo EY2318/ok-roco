@@ -27,12 +27,19 @@ class AutoSpectate(MyBaseTask):
 
             if guanzhan is not None:
                 self.click_box_with_move(guanzhan)
+                self.guanzhan_count = getattr(self, 'guanzhan_count', 0) + 1
+                if self.guanzhan_count > 3:
+                    self.send_key('Esc')
+                    self.guanzhan_count = 0
             elif qiecuo is not None:
                 self.send_key('Esc')
+                self.guanzhan_count = 0
             elif guan is not None:
                 self.click_box_with_move(guan)
+                self.guanzhan_count = 0
             else :
                 self.send_key('f')
+                self.guanzhan_count = 0
 
             self.sleep(1)
 

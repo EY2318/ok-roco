@@ -265,14 +265,14 @@
             "category_id": 11,
             "segmentation": [],
             "bbox": [
-                1393,
-                961,
-                60,
-                30
+                97,
+                969,
+                50,
+                50
             ],
             "ignore": 0,
             "iscrowd": 0,
-            "area": 1800.0
+            "area": 2500.0
         }
     ],
     "info": {
